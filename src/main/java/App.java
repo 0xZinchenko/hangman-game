@@ -16,6 +16,20 @@ public class App {
         System.out.println("Welcome to Java Hangman!");
         System.out.println("------------------------");
 
+        System.out.print("Word: ");
+
+        for (char c : wordState) {
+            System.out.print(c + " ");
+        }
+        System.out.println();
+
+        System.out.print("Guess a letter: ");
+        char guess = scanner.next().toLowerCase().charAt(0);
+
+        
+
+
+
 
         scanner.close();
     }
