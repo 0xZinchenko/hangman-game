@@ -37,6 +37,13 @@ public class App {
                         wordState.set(i, guess);
                     }
                 }
+
+                if (!wordState.contains('_')) {
+                    System.out.print(getHangmanArt(wrongGuesses));
+                    System.out.println("YOU WIN!");
+                    System.out.println("The word was: " + word);
+                    break;
+                }
             } else {
                 wrongGuesses++;
                 System.out.println("Wrong guess!");
