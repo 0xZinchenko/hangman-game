@@ -17,7 +17,9 @@ public class App {
         System.out.println("------------------------");
 
         while (wrongGuesses < 6) {
+
             System.out.print(getHangmanArt(wrongGuesses));
+
             System.out.print("Word: ");
 
             for (char c : wordState) {
@@ -29,7 +31,7 @@ public class App {
             char guess = scanner.next().toLowerCase().charAt(0);
 
             if (word.indexOf(guess) >= 0) {
-                System.out.println("Correct guess!\n");
+                System.out.println("Correct guess!");
                 for (int i = 0; i < word.length(); i++) {
                     if (word.charAt(i) == guess) {
                         wordState.set(i, guess);
@@ -37,10 +39,15 @@ public class App {
                 }
             } else {
                 wrongGuesses++;
-                System.out.println("Wrong guess!\n");
+                System.out.println("Wrong guess!");
             }
         }
 
+        if (wrongGuesses >= 6) {
+            System.out.print(getHangmanArt(wrongGuesses));
+            System.out.println("GAME OVER!");
+            System.out.println("The word was: " + word);
+        }
 
 
 
